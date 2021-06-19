@@ -1,12 +1,13 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
+require('dotenv').config();
 
 
 const app = express()
 
 //String de conexão
-mongoose.connect("mongodb://localhost:27017/reprograma",  {
+mongoose.connect(process.env.DATABASE_URL, {
      useNewUrlParser: true,
      useUnifiedTopology: true
 });
@@ -27,7 +28,7 @@ const colaboradoras = require("./routes/colaboradoras")
 
 
 //configurar body parser
-app.use(bodyParser.json())
+app.use(express.json())
 // app.use(express.json()); - Podemos usar a propria função de parser de json do express, sem a necessidade de instalar o body parser
 
 

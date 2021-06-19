@@ -13,7 +13,7 @@ const colaboradorasSchema = new mongoose.Schema({
     versionKey: false
 });
 
-const colaboradoras = mongoose.model('colaboradoras', colaboradorasSchema);
+const colaboradoras = mongoose.model('colaboradora', colaboradorasSchema);
 
 module.exports = colaboradoras;
 
